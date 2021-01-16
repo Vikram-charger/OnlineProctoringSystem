@@ -9,8 +9,9 @@ def onLeave(event):
 def onEnter(event):
     btn.config(bg='red')
 
-color = '#1d44b8'
+color='#1d44b8'
 window = Tk()
+window.state('zoomed')
 
 canvas = Canvas(window, bg=color, width=500, height=400, bd=0, highlightthickness=0, relief='ridge')
 canvas.place(relx=0.5, rely=0.5, anchor=CENTER)
@@ -30,7 +31,5 @@ window.title("Welcome")
 window.configure(background=color)
 width = window.winfo_screenwidth()
 height = window.winfo_screenheight()
-
-print(width, height)
 window.geometry('%dx%d+0+0' %(width, height))
 window.mainloop()
