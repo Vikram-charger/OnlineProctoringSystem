@@ -9,12 +9,13 @@ def onLeave(event):
 def onEnter(event):
     btn.config(bg='red')
 
-color = '#1d44b8'
+color='#1d44b8'
 window = Tk()
+window.state('zoomed')
 
 canvas = Canvas(window, bg=color, width=500, height=400, bd=0, highlightthickness=0, relief='ridge')
 canvas.place(relx=0.5, rely=0.5, anchor=CENTER)
-img = ImageTk.PhotoImage(Image.open("welcome.png"))
+img = ImageTk.PhotoImage(Image.open("img/welcome.png"))
 canvas.create_text(250, 50, fill="white", font="Times 45 bold", text="ONLINE TEST")
 canvas.create_image(125, 130, anchor=NW, image=img)
 
@@ -30,7 +31,5 @@ window.title("Welcome")
 window.configure(background=color)
 width = window.winfo_screenwidth()
 height = window.winfo_screenheight()
-
-print(width, height)
 window.geometry('%dx%d+0+0' %(width, height))
 window.mainloop()
